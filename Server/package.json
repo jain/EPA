@@ -1,0 +1,32 @@
+{
+  "name": "EPA",
+  "version": "0.2.5",
+  "description": "Server for EPA",
+  "engines": {
+    "node": "5.9.1"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "base64-arraybuffer": "0.1.5",
+    "express": "4.14.0",
+    "fs": "0.0.1-security",
+    "nodemailer": "2.6.4",
+    "pug": "^2.0.0-beta6",
+    "raw-body": "2.1.7",
+    "string_decoder": "0.10.31",
+    "twilio": "2.11.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/epa4012"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,56 @@
+<html>
+<head>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<table border="1" id="myTable">
+    <tr>
+        <th>Image</th>
+        <th>Time In</th>
+        <th>Time Out</th>
+    </tr>
+    <tr>
+        <td id="first"><%= temp %></td>
+        <td id="time_in"><%= time_in %></td>
+        <td id="time_out"><%= time_out %></td>
+    </tr>
+</table>
+<script>
+    $(document).ready(function () {
+        console.log("ready!");
+        var pics = $("#first")[0].innerHTML;
+        console.log(pics);
+        var timeIns = $("#time_in")[0].innerHTML;
+        //if (timeIns.length > 10) {
+            timeIns = timeIns.split(',');
+            var timeOuts = $("#time_out")[0].innerHTML.split(',');
+
+            console.log(pics);
+            var files = pics.split(',');
+            document.getElementById("myTable").deleteRow(1);
+            var tbl = document.getElementById("myTable");
+            for (var i = 0; i < files.length; i++) {
+                var tr = document.createElement('tr');
+                var td = document.createElement('td');
+                var img = document.createElement('img');
+                img.src = 'img_name/' + files[i].split('/')[1];
+                td.appendChild(img);
+                tr.appendChild(td);
+
+                td = document.createElement('td');
+                //td.innerHTML="Time In " + i;
+                td.innerHTML = timeIns[i];
+                tr.appendChild(td);
+
+                td = document.createElement('td');
+                //td.innerHTML="Time Out " + i;
+                td.innerHTML = timeOuts[i];
+                tr.appendChild(td);
+                tbl.appendChild(tr);
+            }
+        //}
+
+    });
+</script>
+</body>
+</html>
